@@ -3,7 +3,7 @@ string username = Console.ReadLine();
 
 if(username == "Max")
 {
-    Console.WriteLine("Hooray, It's Max!")
+    Console.WriteLine("Hooray, It's Max!");
 }
 else{
     Console.Write("Hello, ");
