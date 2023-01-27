@@ -1,44 +1,26 @@
-﻿Console.Clear();
-//Console.SetCursorPosition(10, 4);
-//Console.WriteLine("+");
+﻿int count = 0;
+double distance = 10000;
+double  firstFriendSpeed = 1;
+double  secondFriendSpeed = 2;
+double  dogSpeed = 50;
+double  friend = 1;
+double time = 0;
 
-int xa = 40, ya = 1,
-    xb = 1, yb = 30,
-    xc = 80, yc = 30;
 
-Console.SetCursorPosition(xa, ya);
-Console.WriteLine("+");
-
-Console.SetCursorPosition(xb, yb);
-Console.WriteLine("+");
-
-Console.SetCursorPosition(xc, yc);
-Console.WriteLine("+");
-
-int x = xa, y = xb;
-
-int count = 0;
-
-while(count < 10000) 
+while(distance > 10) 
 {
-    int what = new Random().Next(0, 3); //[0;3) 0 1 2
-    if(what == 0)
+    if(friend == 1)
     {
-        x = (x + xa) / 2;
-        y = (y + ya) / 2;
+        time = distance/(firstFriendSpeed + dogSpeed);
+        friend = 2;
     }
-    if(what == 1)
+    else 
     {
-        x = (x + xb) / 2;
-        y = (y + yb) / 2;
+        time = distance/(secondFriendSpeed + dogSpeed);
+        friend = 1;
     }
-    if(what == 2)
-    {
-        x = (x + xc) / 2;
-        y = (y + yc) / 2;
-    }
-
-    Console.SetCursorPosition(x, y);
-    Console.WriteLine("+");
-    count++;
+distance = distance - time*(firstFriendSpeed + secondFriendSpeed);
+count++;
 }
+Console.Write("собака пробежала раз ");
+Console.Write(count);
