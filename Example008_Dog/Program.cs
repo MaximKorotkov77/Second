@@ -23,4 +23,4 @@ distance = distance - time*(firstFriendSpeed + secondFriendSpeed);
 count++;
 }
 Console.Write("собака пробежала раз ");
-Console.Write(count);
+Console.WriteLine(count);
